@@ -1,20 +1,28 @@
-object Scalademo {
-  def main(args: Array[String]): Unit = {
-    val age =2
-    for(count <- 1 to 5){
-      println(count)
-    }
-    val list = List(1,2,3,4,5,6,76,43)
-    for(travel<-list; if travel<10){
-      print(+travel+"\t")
-    }
-    val result=for{travel<-list; if travel<6} yield {travel*2}
-    print("\n"+result)
-    //matching expressions
-    age match{
-      case 20 => println(age)
-      case _ => println("error")
-    }
+import java.util.Date
 
+import Scalademo.Math.log
+
+object Scalademo {
+  object Math{
+    def add(x:Int,y:Int):Int={
+    x+y
+  }
+    def sqr(x:Int):Int=x*x
+    def cal(x:Int,y:Int,f:(Int,Int)=>Int): Int=f(x,y);
+
+
+    def log(date:Date, message: String)={
+      println(date+"  "+message)
+    }
+}
+
+  def main(args: Array[String]): Unit = {
+    println(Math.add(4,5))
+    val res=Math.cal(5, 155, (x,y)=> x max y) //Higher order function
+    println(res);
+
+    val date=new Date;
+    val newLog=log(date, _:String)
+    newLog("The message 1") //partially applied function
   }
 }
