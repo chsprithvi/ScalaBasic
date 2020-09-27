@@ -27,4 +27,5 @@ object Scalademo {
     println("hello")
     println("hello2")
     println("hello3")
+    println("hello4")
   }
