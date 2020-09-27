@@ -25,4 +25,5 @@ object Scalademo {
     val newLog=log(date, _:String)
     newLog("The message 1") //partially applied function
     println("hello")
+    println("hello2")
   }
