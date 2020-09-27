@@ -26,4 +26,5 @@ object Scalademo {
     newLog("The message 1") //partially applied function
     println("hello")
     println("hello2")
+    println("hello3")
   }
